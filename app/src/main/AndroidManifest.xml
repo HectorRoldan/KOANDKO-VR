@@ -27,6 +27,10 @@
         <!--Actividad para leer acerca de-->
         <activity android:name=".LeerCodigoQR"></activity>
 
+        <!--Actividad para leer acerca de-->
+        <activity android:name=".MainMaterial360"></activity>
+
+
     </application>
 
     <!-- These permissions are used by Google VR SDK to get the best Google VR headset profiles. !-->

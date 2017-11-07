@@ -18,9 +18,9 @@ import com.google.vr.sdk.widgets.video.VrVideoView;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainMaterial360 extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = MainMaterial360.class.getSimpleName();
 
     /**
      * Preserve the video's state when rotating the phone.
@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
             // An error here is normally due to being unable to decode the video format.
             loadVideoStatus = LOAD_VIDEO_STATUS_ERROR;
             Toast.makeText(
-                    MainActivity.this, "Error loading video: " + errorMessage, Toast.LENGTH_LONG)
+                    MainMaterial360.this, "Error loading video: " + errorMessage, Toast.LENGTH_LONG)
                     .show();
             Log.e(TAG, "Error loading video: " + errorMessage);
             System.out.println("Error loading video: " + errorMessage);
@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast
-                                .makeText(MainActivity.this, "Error opening file. ", Toast.LENGTH_LONG)
+                                .makeText(MainMaterial360.this, "Error opening file. ", Toast.LENGTH_LONG)
                                 .show();
                     }
                 });
