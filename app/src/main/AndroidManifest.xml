@@ -25,7 +25,7 @@
         <activity android:name=".AboutUs"></activity>
 
         <!--Actividad para leer acerca de-->
-        <activity android:name=".ClassExample"></activity>
+        <activity android:name=".LeerCodigoQR"></activity>
 
     </application>
 
