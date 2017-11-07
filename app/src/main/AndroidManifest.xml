@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +17,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!--Actividad para leer codigos QR-->
+
+        <!--Actividad para leer acerca de-->
+        <activity android:name=".AboutUs"></activity>
+
+        <!--Actividad para leer acerca de-->
+        <activity android:name=".ClassExample"></activity>
+
     </application>
 
+    <!-- These permissions are used by Google VR SDK to get the best Google VR headset profiles. !-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
 </manifest>
