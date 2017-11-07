@@ -185,13 +185,13 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
         alertDialog.show();
         //result.toString()
         if(result.getText().equals("http://192.168.100.107/hector/three/gyroscope/resources/buyLaptop.MP4")){
-            /*Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);*/
-            System.out.println("HiEquals");
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            //System.out.println("HiEquals");
         }else{
-            /*Intent intent = new Intent(this, Main3D.class);
-            startActivity(intent);*/
-            System.out.println("HiEqualsDos");
+            Intent intent = new Intent(this, Main3D.class);
+            startActivity(intent);
+            //System.out.println("HiEqualsDos");
         }
         scannerView.stopCamera();
         scannerView.startCamera();
