@@ -22,7 +22,7 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
  * Created by hgutierrez on 7/11/17.
  */
 
-public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.ResultHandler{
+public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     //Los valores no deben repetirse
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     private ZXingScannerView scannerView;
@@ -34,32 +34,33 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
         //Llamamos al metodo para inciar la camara
         accederToCamara();
     }
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            // Handle action bar item clicks here. The action bar will
-            // automatically handle clicks on the Home/Up button, so long
-            // as you specify a parent activity in AndroidManifest.xml.
-            int id = item.getItemId();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
-            //noinspection SimplifiableIfStatement
-            if (id == R.id.action_settings) {
-                //System.out.println("Diste click en Acerca de1");
-                Intent intent = new Intent(this, AboutUs.class);
-                startActivity(intent);
-            }/*else{
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            //System.out.println("Diste click en Acerca de1");
+            Intent intent = new Intent(this, AboutUs.class);
+            startActivity(intent);
+        }/*else{
                 //System.out.println("Diste click en Acerca de2");
 
             }*/
 
-            return super.onOptionsItemSelected(item);
-        }
+        return super.onOptionsItemSelected(item);
+    }
 
         /*@Override
         public void onClick(View view) {
@@ -70,10 +71,9 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
             }
         }*/
 
-    private void accederToCamara(){
+    private void accederToCamara() {
         //si la API 23 a mas
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
 
             //Habilitar permisos para la version de API 23 a mas
@@ -82,18 +82,18 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
                     .checkSelfPermission(this, Manifest.permission.CAMERA);
             //Verificamos si el permiso no existe
 
-            if(verificarPermisoReadContacts != PackageManager.PERMISSION_GRANTED){
+            if (verificarPermisoReadContacts != PackageManager.PERMISSION_GRANTED) {
                 //verifico si el usuario a rechazado el permiso anteriormente
 
-                if(shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)){
+                if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
                     //Si a rechazado el permiso anteriormente muestro un mensaje
                     mostrarExplicacion();
-                }else{
+                } else {
                     //De lo contrario carga la ventana para autorizar el permiso
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
                 }
 
-            }else{
+            } else {
                 //Si el permiso ya fue concedido abrimos en intent de contactos
                 //abrirIntentContactos();
                 //System.out.println("El permiso ya fue concedido");
@@ -101,7 +101,7 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
                 //abrirIntentContactos();
             }
 
-        }else{//Si la API es menor a 23 - abrimos en intent de contactos
+        } else {//Si la API es menor a 23 - abrimos en intent de contactos
             //System.out.println("La API es menor a 23");
             //leerCodigoQr();
             scannerQR();
@@ -133,7 +133,7 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
                 .show();
     }
 
-    public void mensajeAccionCancelada(){
+    public void mensajeAccionCancelada() {
         Toast.makeText(getApplicationContext(),
                 "Haz rechazado la petición, por favor considere en aceptarla.",
                 Toast.LENGTH_SHORT).show();
@@ -184,11 +184,11 @@ public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
         //result.toString()
-        if(result.getText().equals("http://192.168.100.107/hector/three/gyroscope/resources/buyLaptop.MP4")){
+        if (result.getText().equals("http://192.168.100.107/hector/three/gyroscope/resources/buyLaptop.MP4")) {
             Intent intent = new Intent(this, MainMaterial360.class);
             startActivity(intent);
             //System.out.println("HiEquals");
-        }else{
+        } else {
             Intent intent = new Intent(this, Main3D.class);
             startActivity(intent);
             //System.out.println("HiEqualsDos");
