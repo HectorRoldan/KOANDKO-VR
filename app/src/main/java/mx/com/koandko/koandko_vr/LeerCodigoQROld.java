@@ -22,7 +22,7 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
  * Created by hgutierrez on 7/11/17.
  */
 
-public class LeerCodigoQR extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class LeerCodigoQROld extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     //Los valores no deben repetirse
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     private ZXingScannerView scannerView;

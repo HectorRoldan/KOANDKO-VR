@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MyClassPocket">
+        <activity android:name=".LeerCodigoQr">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +25,7 @@
         <activity android:name=".AboutUs"></activity>
 
         <!--Actividad para leer acerca de-->
-        <activity android:name=".LeerCodigoQR"></activity>
+        <activity android:name=".LeerCodigoQROld"></activity>
 
         <!--Actividad para leer acerca de-->
         <activity android:name=".MainMaterial360"></activity>

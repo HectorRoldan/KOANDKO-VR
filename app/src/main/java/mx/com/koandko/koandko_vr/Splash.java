@@ -53,7 +53,7 @@ public class Splash extends Activity{
     }
 
     private void startApp() {
-        Intent intent = new Intent(Splash.this, LeerCodigoQR.class);
+        Intent intent = new Intent(Splash.this, LeerCodigoQROld.class);
         startActivity(intent);
 
     }

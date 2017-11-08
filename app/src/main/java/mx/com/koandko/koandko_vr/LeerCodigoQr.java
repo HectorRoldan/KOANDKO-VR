@@ -14,8 +14,6 @@ import android.widget.Toast;
 
 import com.google.zxing.Result;
 
-import edu.cmu.pocketsphinx.Hypothesis;
-import edu.cmu.pocketsphinx.RecognitionListener;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 import static android.widget.Toast.makeText;
@@ -24,7 +22,7 @@ import static android.widget.Toast.makeText;
  * Created by hgutierrez on 8/11/17.
  */
 
-public class MyClassPocket extends Activity implements ZXingScannerView.ResultHandler {
+public class LeerCodigoQr extends Activity implements ZXingScannerView.ResultHandler {
 
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     private ZXingScannerView scannerView;
@@ -41,31 +39,21 @@ public class MyClassPocket extends Activity implements ZXingScannerView.ResultHa
         //si la API 23 a mas
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-
             //Habilitar permisos para la version de API 23 a mas
-
             int verificarPermisoReadContacts = ContextCompat
                     .checkSelfPermission(this, Manifest.permission.CAMERA);
+
             //Verificamos si el permiso no existe
-
             if (verificarPermisoReadContacts != PackageManager.PERMISSION_GRANTED) {
-
                 requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
-
 
             } else {
                 //Si el permiso ya fue concedido abrimos pocedemos a la actividad
-                //abrirIntentContactos();
-                //System.out.println("El permiso ya fue concedido");
-                grabar();
-                //abrirIntentContactos();
+                scannerQR();
             }
-
         } else {
-            //Si la API es menor a 23 - abrimos en intent de contactos
-
-            grabar();
-            //abrirIntentContactos();
+            //Si la API es menor a 23 - procedemos a la actividad
+            scannerQR();
         }
     }
 
@@ -81,7 +69,6 @@ public class MyClassPocket extends Activity implements ZXingScannerView.ResultHa
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
                         }
-
                     }
                 })
                 //Si niega
@@ -134,11 +121,9 @@ public class MyClassPocket extends Activity implements ZXingScannerView.ResultHa
         if (result.getText().equals("http://192.168.100.107/hector/three/gyroscope/resources/buyLaptop.MP4")) {
             Intent intent = new Intent(this, MainMaterial360.class);
             startActivity(intent);
-            //System.out.println("HiEquals");
         } else {
             Intent intent = new Intent(this, Main3D.class);
             startActivity(intent);
-            //System.out.println("HiEqualsDos");
         }
         scannerView.stopCamera();
         scannerView.startCamera();
