@@ -31,4 +31,5 @@ dependencies {
     compile 'com.google.vr:sdk-base:1.100.0'
     compile 'com.google.vr:sdk-videowidget:1.100.0'
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
+
 }
