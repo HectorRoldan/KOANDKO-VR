@@ -27,10 +27,10 @@ import static android.widget.Toast.makeText;
  * Created by hgutierrez on 8/11/17.
  */
 
-public class SpeechRecognitionDemo {
 
 
-    public class PocketSphinxActivity extends Activity implements RecognitionListener {
+
+    public class SpeechRecognitionDemo extends Activity implements RecognitionListener {
 
         /* Named searches allow to quickly reconfigure the decoder */
         private static final String KWS_SEARCH = "wakeup";
@@ -79,7 +79,7 @@ public class SpeechRecognitionDemo {
                 @Override
                 protected Exception doInBackground(Void... params) {
                     try {
-                        Assets assets = new Assets(PocketSphinxActivity.this);
+                        Assets assets = new Assets(SpeechRecognitionDemo.this);
                         File assetDir = assets.syncAssets();
                         setupRecognizer(assetDir);
                     } catch (IOException e) {
@@ -233,4 +233,3 @@ public class SpeechRecognitionDemo {
         }
 
     }
-}

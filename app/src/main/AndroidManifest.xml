@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Splash">
+        <activity android:name=".SpeechRecognitionDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +29,9 @@
 
         <!--Actividad para leer acerca de-->
         <activity android:name=".MainMaterial360"></activity>
+
+        <!--Actividad para SpeechRecognition-->
+        <activity android:name=".Splash"></activity>
 
 
     </application>
