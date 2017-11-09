@@ -232,36 +232,5 @@ public class SpeechRecognitionDemo extends Activity implements RecognitionListen
         switchSearch(KWS_SEARCH);
     }
 
-    /*private void mostrarExplicacion() {
-        new AlertDialog.Builder(this)
-                .setTitle("Autorización")
-                .setMessage("Necesito permiso para acceder a la cámara de tu dispositivo.")
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
-                        }
-
-                    }
-                })
-                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //Mensaje acción cancelada
-                        mensajeAccionCancelada();
-                    }
-                })
-                .show();
-    }
-
-    public void mensajeAccionCancelada() {
-        Toast.makeText(getApplicationContext(),
-                "Haz rechazado la petición, por favor considere en aceptarla.",
-                Toast.LENGTH_SHORT).show();
-    }*/
-
-
 }
 
