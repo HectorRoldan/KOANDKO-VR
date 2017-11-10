@@ -77,7 +77,7 @@ public class MainMaterial360 extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_video360);
 
         seekBar = (SeekBar) findViewById(R.id.seek_bar);
         seekBar.setOnSeekBarChangeListener(new SeekBarListener());
